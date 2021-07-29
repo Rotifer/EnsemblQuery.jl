@@ -5,7 +5,7 @@ using JSON
 export getxrefsforgene
 
 function getxrefsforgene(ensembl_id)
-    url = "https://rest.ensembl.org/xrefs/id/$(ensembl_id)?",
+    url = "https://rest.ensembl.org/xrefs/id/$(ensembl_id)?"
     try
         response = HTTP.request("GET", url,
                                 [
@@ -16,6 +16,7 @@ function getxrefsforgene(ensembl_id)
             return JSON.json(result)
         else
             error("ERROR: HTTP response $(response.status) for URL $(url)"
+        end
     catch y
         println("HTTP request failed: $y.")
     end
