@@ -19,6 +19,20 @@ There is a wide range of REST API end points for a number of common programming 
 (@v1.6) pkg> activate /Users/mfm45656/myjulia/myscripts/EnsemblQuery
 ```
 
+## Package installation
 
+- The local version of the package is under Git control in ~/Documents/GitHub/EnsemblQuery.jl
+- To install, start Julia REPL and enter pkg mode and execute the following:
 
+```
+add https://github.com/Rotifer/EnsemblQuery.jl.git
+```
+
+- Back in REPL mode:
+
+```
+julia> using EnsemblQuery
+julia> ensembl_id = "ENSG00000157764"
+julia> EnsemblQuery.getxrefsforgene(ensembl_id)
+```
 
