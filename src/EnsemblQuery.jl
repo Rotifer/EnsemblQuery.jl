@@ -15,7 +15,7 @@ function getxrefsforgene(ensembl_id)
             result = JSON.parse(String(response.body))
             return JSON.json(result)
         else
-            error("ERROR: HTTP response $(response.status) for URL $(url))"
+            error("ERROR: HTTP response $(response.status) for URL $(url)")
         end
     catch y
         println("HTTP request failed: $y.")
