@@ -1,20 +1,23 @@
 module EnsemblQuery
 using HTTP
 using JSON
+
 export getxrefsforgene
 
-function getxrefsforgene()
+function getxrefsforgene(ensembl_id)
+    url = "https://rest.ensembl.org/xrefs/id/$(ensembl_id)?",
     try
-        response = HTTP.request("GET", "https://rest.ensembl.org/xrefs/id/ENSG00000157764?", 
+        response = HTTP.request("GET", url,
                                 [
                                   "Content_Type" => "application/json"
                                 ])
-        result = JSON.parse(String(response.body))
-        println(JSON.json(result))
-        println(response.status)
+        if response.status == 200
+            result = JSON.parse(String(response.body))
+            return JSON.json(result)
+        else
+            error("ERROR: HTTP response $(response.status) for URL $(url)"
     catch y
         println("HTTP request failed: $y.")
-        #exit()
     end
 end
 
