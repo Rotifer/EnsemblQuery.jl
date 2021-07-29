@@ -1,5 +1,6 @@
 module EnsemblQuery
-
+using HTTP
+using JSON
 export getxrefsforgene
 
 function getxrefsforgene()
