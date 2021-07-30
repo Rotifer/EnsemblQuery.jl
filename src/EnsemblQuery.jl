@@ -7,7 +7,7 @@ export get_xrefs_for_ensembl_id,  get_species_symbol
 base_url = "https://rest.ensembl.org/"
 
 function get_json_for_end_point(end_point_url)
-    url = "$(base_url)$(end_point_url)
+    url = "$(base_url)$(end_point_url)"
     response = HTTP.request("GET", url,
                             [
                                 "Content_Type" => "application/json"
