@@ -4,7 +4,7 @@ using JSON
 
 export getxrefsforgene
 
-function getxrefsforgene(ensembl_id)
+function getxrefsforensemblid(ensembl_id)
     url = "https://rest.ensembl.org/xrefs/id/$(ensembl_id)?"
     try
         response = HTTP.request("GET", url,
