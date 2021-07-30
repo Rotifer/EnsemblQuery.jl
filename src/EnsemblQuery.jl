@@ -2,9 +2,9 @@ module EnsemblQuery
 using HTTP
 using JSON
 
-export getxrefsforgene
+export get_xrefs_for_ensembl_id
 
-function getxrefsforensemblid(ensembl_id)
+function get_xrefs_for_ensembl_id(ensembl_id)
     url = "https://rest.ensembl.org/xrefs/id/$(ensembl_id)?"
     try
         response = HTTP.request("GET", url,
