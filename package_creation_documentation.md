@@ -33,6 +33,20 @@ add https://github.com/Rotifer/EnsemblQuery.jl.git
 ```
 julia> using EnsemblQuery
 julia> ensembl_id = "ENSG00000157764"
-julia> EnsemblQuery.getxrefsforgene(ensembl_id)
+# To see what functions are exported by the module:
+julia> names(EnsemblQuery)
+julia> EnsemblQuery.get_xrefs_for_ensembl_id(ensembl_id)
 ```
+
+## Addition of new functions
+
+- Added another xrefs function called get_xrefs_for_species_symbol
+
+```
+using EnsembleQuery
+species, sp_symbol  = "homo_sapiens", "BRCA2"
+get_xrefs_for_species_symbol(species, sp_symbol)
+```
+
+
 
