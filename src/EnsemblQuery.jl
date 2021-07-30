@@ -4,8 +4,10 @@ using JSON
 
 export get_xrefs_for_ensembl_id
 
+base_url = "https://rest.ensembl.org/"
+
 function get_xrefs_for_ensembl_id(ensembl_id)
-    url = "https://rest.ensembl.org/xrefs/id/$(ensembl_id)?"
+    url = "($base_url)xrefs/id/$(ensembl_id)?"
     try
         response = HTTP.request("GET", url,
                                 [
