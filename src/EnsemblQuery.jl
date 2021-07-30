@@ -2,7 +2,7 @@ module EnsemblQuery
 using HTTP
 using JSON
 
-export get_xrefs_for_ensembl_id,  get_species_symbol
+export get_xrefs_for_ensembl_id,  get_xrefs_for_species_symbol
 
 base_url = "https://rest.ensembl.org/"
 
