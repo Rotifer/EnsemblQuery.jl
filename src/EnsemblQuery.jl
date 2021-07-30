@@ -25,5 +25,9 @@ function get_xrefs_for_ensembl_id(ensembl_id)
     return get_json_for_end_point(end_point_url)
 end
 
+function get_species_symbol(species, sp_symbol)
+    end_point_url = "/xrefs/symbol/$(species)/$(sp_symbol)?"
+    return get_json_for_end_point(end_point_url)
+end
 
 end # module
